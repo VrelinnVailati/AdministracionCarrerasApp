@@ -10,11 +10,10 @@
     </head>
     <body>
         <% ArrayList<Carrera> carreras = (ArrayList<Carrera>)request.getAttribute("carreras"); %>
-        <div class="container">
+        <div class="container-fluid">
             <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                <a style="cursor: default;" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                     <span class="fs-4">Programas Educativos</span>
-                </a>
             </header>
         </div>
 
@@ -40,6 +39,9 @@
                     <% } %>
                 </tbody>
             </table>
+            <div style="text-align: center;">
+                <button class="btn btn-success">Agregar Programa Educativo</button>
+            </div>
         </div>
     </body>
 </html>
