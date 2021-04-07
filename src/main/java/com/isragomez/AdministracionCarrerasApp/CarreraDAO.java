@@ -110,6 +110,30 @@ public class CarreraDAO {
         }
     }
 
+    public Carrera obtenerCarrera(int id) throws SQLException {
+        Connection conexion = null;
+        try {
+            conexion = obtenerConexion();
+        } catch (ClassNotFoundException | SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        PreparedStatement enunciado = null;
+        ResultSet resultado = null;
+        Carrera carrera = null;
+        try {
+            enunciado = conexion.prepareStatement(SQL_READ);
+            enunciado.setInt(1, id);
+            resultado = enunciado.executeQuery();
+            carrera = obtenerCarrera(resultado);
+            return carrera;
+        } finally {
+            if(resultado != null) resultado.close();
+            if(enunciado != null) enunciado.close();
+            if(conexion != null) conexion.close();
+        }
+    }
+
     private ArrayList<Carrera> obtenerCarreras(ResultSet rs) throws SQLException {
         ArrayList<Carrera> carreras = new ArrayList();
 
@@ -122,5 +146,16 @@ public class CarreraDAO {
         }
 
         return carreras;
+    }
+
+    private Carrera obtenerCarrera(ResultSet rs) throws SQLException {
+        Carrera carrera = new Carrera();
+        if(rs.next()) {
+            carrera.setId(rs.getInt("id"));
+            carrera.setNombreCarrera(rs.getString("nombreCarrera"));
+            carrera.setDuracion(rs.getInt("duracion"));
+        }
+
+        return carrera;
     }
 }
