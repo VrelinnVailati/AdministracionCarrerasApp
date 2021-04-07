@@ -40,7 +40,7 @@
                 </tbody>
             </table>
             <div style="text-align: center;">
-                <button class="btn btn-success">Agregar Programa Educativo</button>
+                <a href="${pageContext.request.contextPath}/AgregarCarrera" class="btn btn-success">Agregar Programa Educativo</a>
             </div>
         </div>
     </body>
