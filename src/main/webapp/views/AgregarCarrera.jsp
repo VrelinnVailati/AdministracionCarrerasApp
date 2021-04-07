@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Vi Vailati
-  Date: 4/6/2021
-  Time: 23:30
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <head>
@@ -21,6 +14,20 @@
                 </a>
                 <h3 class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">Agregar Programa Educativo</h3>
             </header>
+        </div>
+
+        <div class="container">
+            <form method="post">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="nombreCarrera" placeholder="Nombre del Programa Educativo">
+                    <label for="nombreCarrera">Nombre del Programa Educativo</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="duracion" placeholder="4">
+                    <label for="duracion">Duración</label>
+                </div>
+                <button onclick="addCarrera" id="btnAdd" class="btn btn-success">Añadir</button>
+            </form>
         </div>
     </body>
 </html>
