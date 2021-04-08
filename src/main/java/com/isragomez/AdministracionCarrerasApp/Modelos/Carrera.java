@@ -5,6 +5,13 @@ public class Carrera {
     private String nombreCarrera;
     private int duracion;
 
+    public Carrera() { }
+
+    public Carrera(String nombreCarrera, int duracion) {
+        setNombreCarrera(nombreCarrera);
+        setDuracion(duracion);
+    }
+
     public int getId() {
         return id;
     }
