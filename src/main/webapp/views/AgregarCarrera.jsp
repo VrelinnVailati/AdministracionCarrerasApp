@@ -7,6 +7,7 @@
         <title>Agregar Carrera</title>
     </head>
     <body>
+        <% boolean error = Boolean.parseBoolean(request.getAttribute("error").toString()); %>
         <div class="container-fluid">
             <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
                 <a href="${pageContext.request.contextPath}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
@@ -17,16 +18,17 @@
         </div>
 
         <div class="container">
+            <p style="visibility: <%= error ? "visible" : "hidden" %>; color: red;">Errores en los datos, introduzca nuevamente</p>
             <form method="post">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="nombreCarrera" placeholder="Nombre del Programa Educativo">
+                    <input type="text" class="form-control" name="nombreCarrera" id="nombreCarrera" placeholder="Nombre del Programa Educativo">
                     <label for="nombreCarrera">Nombre del Programa Educativo</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="duracion" placeholder="4">
+                    <input type="number" class="form-control" name="duracion" id="duracion" placeholder="4">
                     <label for="duracion">Duración</label>
                 </div>
-                <button onclick="addCarrera" id="btnAdd" class="btn btn-success">Añadir</button>
+                <button type="submit" id="btnAdd" class="btn btn-success">Añadir</button>
             </form>
         </div>
     </body>

@@ -40,7 +40,7 @@ public class CarreraDAO {
             preparedStatement.executeUpdate();
         } finally {
             if(preparedStatement != null) preparedStatement.close();
-            if(conexion != null) conexion.close();
+            conexion.close();
         }
     }
 
