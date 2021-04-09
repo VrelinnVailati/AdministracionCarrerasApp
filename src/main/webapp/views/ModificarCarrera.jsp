@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.isragomez.AdministracionCarrerasApp.Modelos.Carrera" %><%--
   Created by IntelliJ IDEA.
   User: Vi Vailati
   Date: 4/8/2021
@@ -14,7 +14,34 @@
         <title>Modificar Carrera</title>
     </head>
     <body>
-        <% int ID = Integer.parseInt(request.getAttribute("id").toString()); %>
-        <h1>ID Carrera <%= ID %></h1>
+        <% boolean error = Boolean.parseBoolean(request.getAttribute("error").toString()); %>
+        <% Carrera carrera = (Carrera) request.getAttribute("carrera"); %>
+        <div class="container-fluid">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <a href="${pageContext.request.contextPath}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+                    <span class="fs-4"><i class="fas fa-arrow-left"></i></span>
+                </a>
+                <h3 class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">Modificar Programa Educativo</h3>
+            </header>
+        </div>
+
+        <div class="container">
+            <p style="visibility: <%= error ? "visible" : "hidden" %>; color: red;">Errores en los datos, introduzca nuevamente</p>
+            <form method="post">
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" disabled name="id" id="id" value="<%= carrera.getId() %>">
+                    <label for="id">ID</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="nombreCarrera" id="nombreCarrera" value="<%= carrera.getNombreCarrera() %>" placeholder="Nombre del Programa Educativo">
+                    <label for="nombreCarrera">Nombre del Programa Educativo</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" name="duracion" value="<%= carrera.getDuracion() %>" id="duracion" placeholder="4">
+                    <label for="duracion">Duración</label>
+                </div>
+                <button type="submit" id="btnAdd" class="btn btn-success">Actualizar</button>
+            </form>
+        </div>
     </body>
 </html>

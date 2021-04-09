@@ -35,7 +35,7 @@
                         <th scope="row"><a href="${pageContext.request.contextPath}/carrera?id=<%= cID %>"><span class="badge bg-primary"> <%= cID %> </span></a></th>
                         <td><%= carrera.getNombreCarrera() %></td>
                         <td><%= carrera.getDuracion() %></td>
-                        <td><button class="btn btn-outline-light">Actualizar</button></td>
+                        <td><a href="${pageContext.request.contextPath}/ModificarCarrera?id=<%= cID %>" class="btn btn-outline-light">Actualizar</a></td>
                     </tr>
                     <% } %>
                 </tbody>
