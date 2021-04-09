@@ -12,6 +12,12 @@ public class Carrera {
         setDuracion(duracion);
     }
 
+    public Carrera(int id, String nombreCarrera, int duracion) {
+        setId(id);
+        setNombreCarrera(nombreCarrera);
+        setDuracion(duracion);
+    }
+
     public int getId() {
         return id;
     }

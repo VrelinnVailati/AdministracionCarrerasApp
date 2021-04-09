@@ -14,6 +14,7 @@
             <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
                 <a style="cursor: default;" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
                     <span class="fs-4">Programas Educativos</span>
+                </a>
             </header>
         </div>
 
@@ -34,7 +35,7 @@
                         <th scope="row"><a href="${pageContext.request.contextPath}/carrera?id=<%= cID %>"><span class="badge bg-primary"> <%= cID %> </span></a></th>
                         <td><%= carrera.getNombreCarrera() %></td>
                         <td><%= carrera.getDuracion() %></td>
-                        <td><button class="btn btn-outline-light">Actualizar</button></td>
+                        <td><a href="${pageContext.request.contextPath}/ModificarCarrera?id=<%= cID %>" class="btn btn-outline-light">Actualizar</a></td>
                     </tr>
                     <% } %>
                 </tbody>
