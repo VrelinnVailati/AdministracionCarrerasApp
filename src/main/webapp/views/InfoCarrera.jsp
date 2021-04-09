@@ -40,7 +40,7 @@
 
             <div style="text-align: center;">
                 <a href="${pageContext.request.contextPath}/ModificarCarrera?id=<%= carrera.getId() %>" class="btn btn-outline-primary">Modificar Programa Educativo</a>
-                <a href="${pagecontext.request.contextPath}/EliminarCarrera?id=<%= carrera.getId() %>" class="btn btn-danger">Eliminar Programa Educativo</a>
+                <a href="${pageContext.request.contextPath}/EliminarCarrera?id=<%= carrera.getId() %>" class="btn btn-danger">Eliminar Programa Educativo</a>
             </div>
         </div>
     </body>

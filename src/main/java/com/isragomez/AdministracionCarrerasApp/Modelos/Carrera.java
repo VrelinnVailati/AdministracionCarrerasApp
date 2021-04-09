@@ -18,6 +18,10 @@ public class Carrera {
         setDuracion(duracion);
     }
 
+    public Carrera(int id) {
+        setId(id);
+    }
+
     public int getId() {
         return id;
     }
